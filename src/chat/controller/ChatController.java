@@ -62,4 +62,10 @@ public class ChatController
 		
 		return output; 
 	}
+	public String useChatbotCheckers;
+	{
+		
+	}
+	
+	
 }
