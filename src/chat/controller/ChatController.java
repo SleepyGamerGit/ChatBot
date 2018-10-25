@@ -10,7 +10,7 @@ public class ChatController
 {
 	private ArrayList<String> responseList;
 	private ArrayList<String> spookyList;
-	private void simplebot()
+	//private void simplebot()
 	{
 		
 	}
@@ -37,18 +37,16 @@ public class ChatController
 			this.responseList = new ArrayList<String>();
 			this.spookyList = new ArrayList<String>();
 			
-			buildTheList();
+			//buildTheList();
 		}
 	
 	public String interactWithChatbot(String text)
 	{
-		String userInput = JOptionPane.showInputDialog(null, "")
+		String userInput = JOptionPane.showInputDialog(null, "");
+		return userInput;
 	}
 	
-	
-	
-	
-	public void buildTheList() 
+	public void spookyList() 
 	{
 		responseList.add("Whats up");
 		responseList.add("Goodye");
@@ -65,6 +63,14 @@ public class ChatController
 	public String useChatbotCheckers;
 	{
 		
+	}
+	public Object getChatbot()
+	{
+		return "";
+	}
+	public String useChatbotCheckers(String string)
+	{
+		return null;
 	}
 	
 	

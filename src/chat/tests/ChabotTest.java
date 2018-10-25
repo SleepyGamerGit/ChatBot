@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import chat.model.Chatbot;
 
-public class ChabotTest
+public class ChabotTest<testedBot>
 {
 	private Chatbot testedBot;
 
@@ -16,7 +16,6 @@ public class ChabotTest
 	public void setUp() throws Exception
 	{
 		testedBot = new Chatbot();
-		
 	}
 
 	@After
