@@ -10,14 +10,15 @@ public class ChatController
 {
 	private ArrayList<String> responseList;
 	private ArrayList<String> spookyList;
-	//private void simplebot()
+	// private void simplebot()
 	{
-		
+
 	}
+
 	public void askName()
 	{
-		String answer = JOptionPane.showInputDialog(null, "whats your name"); 
-		if(answer == null)
+		String answer = JOptionPane.showInputDialog(null, "whats your name");
+		if (answer == null)
 		{
 			JOptionPane.showInputDialog(null, "Do you have a name?");
 		}
@@ -25,53 +26,60 @@ public class ChatController
 		{
 			JOptionPane.showInputDialog(null, "Hi there" + answer + "My name is Sora");
 		}
-	}	
-	
+	}
+
 	public void start()
-		{
+	{
 		String userInput = "";
-		while(!userInput.equalsIgnoreCase("quit"))
+		while (!userInput.equalsIgnoreCase("quit"))
 		{
 			userInput = JOptionPane.showInputDialog(null, "type quit to exit");
 		}
-			this.responseList = new ArrayList<String>();
-			this.spookyList = new ArrayList<String>();
-			
-			//buildTheList();
-		}
-	
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+
+		// buildTheList();
+	}
+
 	public String interactWithChatbot(String text)
 	{
 		String userInput = JOptionPane.showInputDialog(null, "");
 		return userInput;
 	}
-	
-	public void spookyList() 
+
+	public void spookyList()
 	{
 		responseList.add("Whats up");
 		responseList.add("Goodye");
 		responseList.add("BOO");
+		responseList.add("Thats to bad");
+		responseList.add("?";)
+		
+		
 	}
+
 	public String processText(String userText)
 	{
 		String output = "";
-		
-		output += "you said: " + userText;	
-		
-		return output; 
+
+		output += "you said: " + userText;
+
+		return output;
 	}
+
 	public String useChatbotCheckers;
 	{
-		
+
 	}
+
 	public Object getChatbot()
 	{
 		return "";
 	}
+
 	public String useChatbotCheckers(String string)
 	{
 		return null;
 	}
-	
-	
+
 }

@@ -27,7 +27,7 @@ public class ChabotTest<testedBot>
 	@Test
 	public void testChatbot()
 	{
-		assertNotNull("You need to initialize the content data member", testedBot.getContent() );
+		assertNotNull("You need to initialize the content data member", testedBot.getContent());
 		assertNotNull("ArrayLists need to be initialized too", testedBot.getSpookyList());
 		assertNotNull("ArrayLists need to be initialized too", testedBot.getResponseList());
 		assertNotNull("Current user data member needs to be initialized", testedBot.getCurrentUser());
@@ -40,7 +40,7 @@ public class ChabotTest<testedBot>
 		assertNotNull("Even null data should not return null", testedBot.processText(null));
 		assertNotNull("Empty text should not return null", testedBot.processText(""));
 		assertNotNull("Random text should not return null", testedBot.processText("dsfkjadsjkghakjs"));
-		assertTrue("The empty String should not be returned", testedBot.processText(null).length() > 0 );
+		assertTrue("The empty String should not be returned", testedBot.processText(null).length() > 0);
 		assertTrue("The empty String still should not be returned", testedBot.processText("").length() > 0);
 		assertTrue("The text you supply should be prefixed with \"You said: \" ", testedBot.processText("").contains("You said: "));
 		assertTrue("The text you supply should be prefixed with \"You said: \" ", testedBot.processText(sampleText).contains("You said: "));
@@ -66,8 +66,7 @@ public class ChabotTest<testedBot>
 		}
 		assertFalse("Easter should return false", testedBot.spookyChecker("Easter"));
 	}
-	
-	
+
 	@Test
 	public void testLegitimacyChecker()
 	{
@@ -90,17 +89,17 @@ public class ChabotTest<testedBot>
 	@Test
 	public void testGetSpookyList()
 	{
-		 assertNotNull("You really need to initialize the spookyList", testedBot.getSpookyList());
-		 assertTrue("You need to have more than 8 items in the spookyList", testedBot.getSpookyList().size() > 8);
-		 assertTrue("The first item in your list has to mention Halloween", testedBot.getSpookyList().get(0).contains("Halloween"));
+		assertNotNull("You really need to initialize the spookyList", testedBot.getSpookyList());
+		assertTrue("You need to have more than 8 items in the spookyList", testedBot.getSpookyList().size() > 8);
+		assertTrue("The first item in your list has to mention Halloween", testedBot.getSpookyList().get(0).contains("Halloween"));
 	}
-	
+
 	@Test
 	public void testGetResponseList()
 	{
-		 assertNotNull("You really need to initialize the responseList", testedBot.getResponseList());
-		 assertTrue("You need to have more than 15 items in the repsonseList", testedBot.getResponseList().size() > 15);
-		 assertTrue("The first item in your list has to mention Hello", testedBot.getResponseList().get(0).contains("Hello"));
+		assertNotNull("You really need to initialize the responseList", testedBot.getResponseList());
+		assertTrue("You need to have more than 15 items in the repsonseList", testedBot.getResponseList().size() > 15);
+		assertTrue("The first item in your list has to mention Hello", testedBot.getResponseList().get(0).contains("Hello"));
 	}
 
 	@Test
