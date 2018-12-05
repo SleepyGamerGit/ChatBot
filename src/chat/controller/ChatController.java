@@ -33,7 +33,8 @@ public class ChatController
 		String userInput = "";
 		while (!userInput.equalsIgnoreCase("quit"))
 		{
-			userInput = JOptionPane.showInputDialog(null, "type quit to exit");
+			//if (answer == null)
+				userInput = JOptionPane.showInputDialog(null, "type quit to exit");
 		}
 		this.responseList = new ArrayList<String>();
 		this.spookyList = new ArrayList<String>();
@@ -43,6 +44,7 @@ public class ChatController
 
 	public String interactWithChatbot(String text)
 	{
+		// if(answer == null)
 		String userInput = JOptionPane.showInputDialog(null, "");
 		return userInput;
 	}
@@ -53,8 +55,21 @@ public class ChatController
 		responseList.add("Goodye");
 		responseList.add("BOO");
 		responseList.add("Thats to bad");
-		responseList.add("?";)
-		
+		responseList.add("?");
+		responseList.add("Why?");
+		responseList.add("I don't understand");
+		responseList.add("No");
+		responseList.add("Then do it!");
+		responseList.add("Corrct");
+		responseList.add("Hi");
+	}
+
+	public Boolean spookyTester(String spookyPhrase)
+	{
+		//spookyTester = new spookyTester();
+		Boolean resualt = null;
+		String magicWord = "Halloween";
+		return resualt;
 		
 	}
 

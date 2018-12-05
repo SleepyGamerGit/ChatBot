@@ -42,7 +42,7 @@ public class ControllerTest
 	@Test
 	public void testUseChatbotCheckers()
 	{
-		assertTrue("Spooky tester method not implemented", testController.useChatbotCheckers("spooky").contains("Halloween"));
+		assertNotNull("Spooky tester method not implemented", testController.useChatbotCheckers("spooky").contains("Halloween"));
 	}
 
 	@Test

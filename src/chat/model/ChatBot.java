@@ -1,5 +1,7 @@
 package chat.model;
 
+import java.util.ArrayList;
+
 public class ChatBot
 {
 
@@ -39,6 +41,11 @@ public class ChatBot
 		}
 
 		return isValid;
+	}
+
+	public void getArrayList<String>spookyList()
+	{
+		
 	}
 
 	public void get()
