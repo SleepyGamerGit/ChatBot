@@ -2,51 +2,41 @@ package chat.controller;
 
 import java.util.ArrayList;
 
-//import ChatBot;
+import chat.model.ChatBot;
 
 import javax.swing.JOptionPane;
 
+import chat.view.ChatFrame;
+
 public class ChatController
 {
+	private Chatbot simpleBot;
+	private ChatFrame appFrame;
+	
 	private ArrayList<String> responseList;
 	private ArrayList<String> spookyList;
-	// private void simplebot()
+	private void simplebot()
 	{
 
 	}
-
-	public void askName()
+	
+	public ChatController()
 	{
-		String answer = JOptionPane.showInputDialog(null, "whats your name");
-		if (answer == null)
-		{
-			JOptionPane.showInputDialog(null, "Do you have a name?");
-		}
-		else
-		{
-			JOptionPane.showInputDialog(null, "Hi there" + answer + "My name is Sora");
-		}
+		simpleBot = new ChatBot();
+		appFrame = new ChatFrame(this);
 	}
+	
 
 	public void start()
 	{
-		String userInput = "";
-		while (!userInput.equalsIgnoreCase("quit"))
-		{
-			//if (answer == null)
-				userInput = JOptionPane.showInputDialog(null, "type quit to exit");
-		}
-		this.responseList = new ArrayList<String>();
-		this.spookyList = new ArrayList<String>();
-
-		// buildTheList();
+		
 	}
 
 	public String interactWithChatbot(String text)
 	{
-		// if(answer == null)
-		String userInput = JOptionPane.showInputDialog(null, "");
-		return userInput;
+		String output = "";
+		output += simpleBot.processText(text);
+		return output;
 	}
 
 	public void spookyList()

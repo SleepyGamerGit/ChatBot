@@ -43,10 +43,10 @@ public class ChatBot
 		return isValid;
 	}
 
-	public void getArrayList<String>spookyList()
-	{
+	//public void getArrayList<String>spookyList()
+	//{
 		
-	}
+//	}
 
 	public void get()
 	{
