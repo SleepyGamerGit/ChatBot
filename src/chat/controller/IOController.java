@@ -8,14 +8,17 @@ import java.io.PrintWriter;
 
 public class IOController
 {
-	
+
+
+
 	public static void saveText(ChatController app, String path, String textToSavve)
 	{
 		try
 		{
 			String filename = path;
 			Calendar date = Calendar.getInstance();
-			filename += "/" + Calendar.MONTH + " " + Calendar.DAY_OF_MONTH;
+			filename += "/" + Calendar.MONTH + " " + date.get(Calendar.DAY_OF_MONTH);
+			filename += " at " + date.get(Calendar.HOUR) + "-" + date.get(Calendar.MINUTE);
 			filename += " chat save.txt";
 			
 			File saveFile = new File(filename);
@@ -31,7 +34,7 @@ public class IOController
 			textScanner.close();
 			saveText.close();
 		}
-		catch(IOexpection error)
+		catch(IOException error)
 		{
 			app.handleErrors(error);
 		}
@@ -40,5 +43,4 @@ public class IOController
 			app.handleErrors(genericError);
 		}
 	}
-
 }
