@@ -44,6 +44,32 @@ public class ChatPanel extends JPanel
 		setupScrollPane();
 	}
 
+	private String getPath(String choice)
+	{
+		String path = ".";
+		int result = -99;
+		JFileChooser fileChooser = new JFileChooser();
+		if (choice.equals("save"))
+		{
+			fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			result = fileChooser.showSaveDialog(this);
+			if(result == JFileChooser.APPROVE_OPTION)
+			{
+				path = fileChooser.getCurrentDirectory().getAbsolutePath();
+			}
+		}
+		else
+		{
+			result = fileChooser.showOpenDialog(this);
+			if(result == JFileChooser.APPROVE_OPTION)
+			{
+				path = fileChooser.getSelectedFile().getAbsolutePath();
+			}
+		}
+		
+		return path;
+	}
+	
 	private void setupScrollPane()
 	{
 		chatArea.setEditable(false);
@@ -99,6 +125,15 @@ public class ChatPanel extends JPanel
 			}
 		});
 
+		loadButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String path = getPath("load");
+				String chatText = IOController.loadFile(appController,  path);
+				chatArea.setText(chatText);
+			}
+		});
 	}
 
 }
