@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
 public class ChatPanel extends JPanel
@@ -18,10 +19,12 @@ public class ChatPanel extends JPanel
 	private JButton checkerButton;
 	private JButton loadButton;
 	private JButton saveButton;
-
+	private JButton tweetButton;
+	private JButton searchTwitterButton;
 	private JTextArea chatArea;
 	private JTextField chatField;
 	private JScrollPane chatPane;
+	private JPanel buttonPanel;
 
 	public ChatPanel(ChatController appController)
 	{
@@ -38,12 +41,25 @@ public class ChatPanel extends JPanel
 
 		chatPane = new JScrollPane();
 
+		buttonPanel = new JPanel(new GridLayout(1,0));
+		
+		setupButtons();
 		setupPanel();
 		setupLayout();
 		setupListeners();
 		setupScrollPane();
 	}
 
+	private void setupButtons()
+	{
+		buttonPanel.add(saveButton);
+		buttonPanel.add(loadButton);
+		buttonPanel.add(chatButton);
+		buttonPanel.add(checkerButton);
+		buttonPanel.add(tweetButton);
+		buttonPanel.add(searchTwitterButton);
+	}
+	
 	private String getPath(String choice)
 	{
 		String path = ".";
@@ -85,7 +101,9 @@ public class ChatPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(appLayout);
-		this.setPreferredSize(new Dimension(800, 600));
+		this.setPreferredSize(new Dimension(1024, 768));
+		buttonPanel.setPreferredSize(new Dimension(900, 150));
+		buttonPanel.setBackground(Color.CYAN);
 		this.setBackground(Color.MAGENTA);
 		this.add(chatButton);
 		this.add(loadButton);

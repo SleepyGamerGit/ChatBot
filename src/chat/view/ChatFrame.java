@@ -23,7 +23,7 @@ public class ChatFrame extends JFrame
 	{
 		this.setContentPane(appPanel);
 		this.setSize(1024, 768);
-		this.setTitle("ChatBot 2.0");
+		this.setTitle("ChatBot and Twitter 3.1");
 		this.setResizable(false);
 		this.setVisible(true);
 	}
