@@ -3,6 +3,7 @@ package chat.controller;
 import java.util.ArrayList;
 
 import chat.model.ChatBot;
+import chat.model.ChatTwitter;
 
 import javax.swing.JOptionPane;
 
@@ -12,6 +13,7 @@ public class ChatController
 {
 	private Chatbot simpleBot;
 	private ChatFrame appFrame;
+	private ChatTwitter myTwitter;
 	
 	private ArrayList<String> responseList;
 	private ArrayList<String> spookyList;
@@ -24,6 +26,7 @@ public class ChatController
 	{
 		simpleBot = new ChatBot();
 		appFrame = new ChatFrame(this);
+		myTwitter = new ChatTwitter(this);
 	}
 	
 
@@ -105,6 +108,11 @@ public class ChatController
 	public ChatBot getChatBot()
 	{
 		return simpleBot;
+	}
+	
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
 	}
 
 
